@@ -379,7 +379,7 @@ const i18n = {
     const tk = document.body.dataset.titleKey;
     if (tk && t[tk]) document.title = t[tk];
     document.querySelectorAll('[data-lang-img]').forEach(el => {
-      el.style.display = el.dataset.langImg === this.current ? '' : 'none';
+      el.classList.toggle('lang-active', el.dataset.langImg === this.current);
     });
   }
 };

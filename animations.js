@@ -31,7 +31,7 @@ if (document.querySelector('.about')) {
   gsap.from('.portfolio-item', { y: 60, opacity: 0, duration: 0.65, stagger: 0.07, ease, ...st('.portfolio-grid') });
 
   // Prices
-  gsap.from('.prices-image', { ...fadeLeft, ...st('.prices', 'top 78%') });
+  gsap.from('.prices-visual', { ...fadeLeft, ...st('.prices', 'top 78%') });
   gsap.from(['.prices .label', '.prices-heading', '.prices-body', '.prices .btn-gold'], {
     ...fadeUp, stagger: 0.1, ...st('.prices', 'top 78%')
   });
