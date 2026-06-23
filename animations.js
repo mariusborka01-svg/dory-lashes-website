@@ -31,11 +31,11 @@ if (document.querySelector('.about')) {
   gsap.from('.portfolio-item', { y: 60, opacity: 0, duration: 0.65, stagger: 0.07, ease, ...st('.portfolio-grid') });
 
   // Prices
-  gsap.from(['.prices .label', '.prices-info .gold-divider', '.prices-heading', '.prices-body', '.prices-cta'], {
-    ...fadeUp, stagger: 0.1, ...st('.prices', 'top 78%')
+  gsap.from(['.prices .label', '.prices-info .gold-divider', '.prices-heading', '.prices-body', '.prices-cta', '.prices-booking-note'], {
+    ...fadeUp, stagger: 0.1, immediateRender: false, ...st('.prices', 'top 78%')
   });
   gsap.from('.price-group', {
-    y: 24, opacity: 0, duration: 0.65, stagger: 0.12, ease,
+    y: 24, opacity: 0, duration: 0.65, stagger: 0.12, ease, immediateRender: false,
     ...st('.prices-table', 'top 85%')
   });
 

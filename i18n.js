@@ -30,6 +30,7 @@ const translations = {
     'prices.heading': 'Прайс.',
     'prices.body':    'Нарощування вій різних технік і ефектів.<br>Всі ціни в кронах (CZK). Запис тільки через Instagram.',
     'prices.cta':     'Записатися →',
+    'prices.booking.note': 'Запис через Instagram. Відповідаю протягом доби.',
     // Prices — categories & services
     'pcat.lashes':    'НАРОЩУВАННЯ ВІЙ',
     'pcat.removal':   'ЗНЯТТЯ',
@@ -230,6 +231,7 @@ const translations = {
     'prices.heading': 'Ceník.',
     'prices.body':    'Prodlužování řas různými technikami a efekty.<br>Ceny jsou v korunách (CZK). Rezervace pouze přes Instagram.',
     'prices.cta':     'Objednat se →',
+    'prices.booking.note': 'Rezervace přes Instagram. Odpovídám do 24 hodin.',
     // Prices — categories & services
     'pcat.lashes':    'PRODLUŽOVÁNÍ ŘAS',
     'pcat.removal':   'ODSTRANĚNÍ',
