@@ -1,0 +1,384 @@
+const translations = {
+  uk: {
+    'page.title':         'Dory Lashes — Дарина, майстер з нарощування вій · Плзень',
+    'course.page.title':  'Курс з нарощування вій — Dory Lashes · Плзень',
+    // Nav — index
+    'nav.portfolio':  'Портфоліо',
+    'nav.prices':     'Ціни',
+    'nav.about':      'Про мене',
+    'nav.course.cta': 'Курс →',
+    // Nav — course
+    'nav.back': '← До портфоліо',
+    'nav.book': 'Записатися →',
+    // Hero (index)
+    'hero.label':         'LASH ARTIST · ПЛЗЕНЬ, ЧЕХІЯ',
+    'hero.sub':           'Майстер з нарощування вій · 3 роки досвіду<br>Плзень, Чехія · @dory_lashes_plzen',
+    'hero.overlay.label': 'Майстерність у деталях',
+    'hero.overlay.title': 'Погляд,<br>що говорить<br><em>сам.</em>',
+    // About
+    'about.label':   'ПРО МЕНЕ',
+    'about.heading': 'Я Дарина —<br>майстер<br>з вій.',
+    'about.body':    'Мені 22 роки, я живу в Чехії вже п\'ятий рік. Починала, як усі — на заводі. Але в якийсь момент зрозуміла, що так не хочу. Пішла на курс з нарощування вій — і відтоді моє життя змінилося повністю.<br><br>Сьогодні я працюю для себе, будую собі ім\'я і допомагаю іншим дівчатам зробити те саме.',
+    'about.stat1':   'роки досвіду',
+    'about.stat2':   'задоволених клієнток',
+    'about.cta':     'Дивитися роботи →',
+    // Portfolio
+    'portfolio.label':   'ПОРТФОЛІО',
+    'portfolio.heading': 'Роботи.',
+    // Prices (index)
+    'prices.label':   'ЦІНИ НА ПОСЛУГИ',
+    'prices.heading': 'Прайс.',
+    'prices.body':    'Нарощування вій різних технік і ефектів.<br>Всі ціни в кронах (CZK). Запис тільки через Instagram.',
+    'prices.cta':     'Записатися →',
+    // Testimonials (index)
+    'testi.label':   'ВІДГУКИ КЛІЄНТОК',
+    'testi.heading': 'Що кажуть клієнтки.',
+    'rev1.quote': '"Дарина — чарівниця. Приходжу вже третій раз і щоразу результат кращий. Після процедури відчуваєш себе зовсім інакше."',
+    'rev1.name':  'Марія',
+    'rev1.city':  'Плзень, Чехія',
+    'rev2.quote': '"Нарешті знайшла майстра, якому довіряю. Акуратно, без алергії, тримаються довго. Рекомендую всім своїм подругам."',
+    'rev2.name':  'Аня',
+    'rev2.city':  'Прага, Чехія',
+    'rev3.quote': '"Я не могла повірити, як природно виглядає. Всі питали, чи це мої власні. Дарина знає свою справу досконало."',
+    'rev3.name':  'Оксана',
+    'rev3.city':  'Брно, Чехія',
+    // Course transition
+    'ct.label':   'ОФЛАЙН-КУРС',
+    'ct.heading': 'Хочеш навчитися<br>нарощувати вії?',
+    'ct.sub':     'Я проводжу офлайн-курс у Плзені. Індивідуальне навчання, сертифікат.',
+    'ct.cta':     'Дізнатися про курс →',
+    // Footer
+    'footer.ig':   'Instagram: @dory_lashes_plzen',
+    'footer.copy': '© 2026 Dory Lashes · Plzeň · IČO: 24864641',
+    // DM modal
+    'dm.heading': 'Напиши нам в Instagram',
+    'dm.sub':     'Скопіюй повідомлення і надішли його нам у Direct — відповімо якнайшвидше.',
+    'dm.copy':    'Копіювати',
+    'dm.open':    'Відкрити Instagram →',
+
+    // ── Course page ───────────────────────────────────
+    'c.hero.label':   'ОФЛАЙН-КУРС · ПЛЗЕНЬ, ЧЕХІЯ',
+    'c.hero.heading': 'З нуля до<br>впевненого<br>майстра.',
+    'c.hero.sub':     'Навчання нарощуванню вій від Дарини.<br>Індивідуальне навчання · Сертифікат · Підтримка після курсу.',
+    'c.hero.cta':     'Записатися на курс →',
+    'c.hero.note':    'Наступний потік — вересень 2026. Місця обмежені.',
+    // For whom
+    'fw.label':   'ДЛЯ КОГО ЦЕЙ КУРС',
+    'fw.heading': 'Цей курс для тебе, якщо...',
+    'fw.badge1':  'Початківці',
+    'fw.badge2':  'Практики',
+    'fw.badge3':  "Нова кар'єра",
+    'fw.badge4':  'Офлайн',
+    'fw.card1':   'Ти ніколи не займалася ресницями і хочеш почати з нуля',
+    'fw.card2':   'Ти вже практикуєш, але відчуваєш, що "застрягла" і хочеш рости',
+    'fw.card3':   'Ти шукаєш нову професію зі стабільним доходом',
+    'fw.card4':   'Тобі важливо навчитися у живого майстра, а не просто дивитися відео',
+    // Program
+    'prog.label':   'ПРОГРАМА КУРСУ',
+    'prog.heading': '4 дні — 4 кроки<br>до професії.',
+    'd1.label': 'ДЕНЬ 01', 'd1.title': 'Основи',
+    'd1.i1': 'Теорія: будова ока, безпека',
+    'd1.i2': 'Робота з клеєм та матеріалами',
+    'd1.i3': 'Відпрацювання на манекені',
+    'd1.i4': 'Основи моделювання вій',
+    'd2.label': 'ДЕНЬ 02', 'd2.title': 'Класика',
+    'd2.i1': 'Техніка класичного нарощування (1D)',
+    'd2.i2': 'Практика на моделях',
+    'd2.i3': 'Постановка руки, швидкість',
+    'd2.i4': 'Симетрія та виправлення',
+    'd3.label': 'ДЕНЬ 03', 'd3.title': 'Об\'єми',
+    'd3.i1': '2D, 3D об\'єми, Wet Effect',
+    'd3.i2': 'Формування пучків',
+    'd3.i3': 'Ефекти: лисячий, лялечний, стрілка, мокрий',
+    'd3.i4': 'Практика на моделях',
+    'd4.label': 'ДЕНЬ 04', 'd4.title': 'Фінал',
+    'd4.i1': 'Завершальна практика на моделях',
+    'd4.i2': 'Відпрацювання всіх технік',
+    'd4.i3': 'Іспит та оцінка роботи',
+    'd4.i4': 'Старт кар\'єри: соцмережі, прайс',
+    // Included
+    'inc.label':   'ЩО ВХОДИТЬ У КУРС',
+    'inc.heading': 'Все необхідне для старту кар\'єри.',
+    'inc1.title': 'Теорія + Практика',
+    'inc1.desc':  'Будова ока, робота з клеєм і матеріалами, безпека. Відпрацювання на манекені + 4 живі моделі.',
+    'inc2.title': 'Всі техніки',
+    'inc2.desc':  'Класика (1D), 2D-3D, Wet Effect. Ефекти: лисячий, лялечний, стрілка, мокрий погляд.',
+    'inc3.title': 'Сертифікат',
+    'inc3.desc':  'Офіційний сертифікат про проходження курсу з нарощування вій.',
+    'inc4.title': 'Стартовий набір',
+    'inc4.desc':  'Професійний набір для роботи у подарунок — починай заробляти одразу!',
+    'inc5.title': 'Методичка',
+    'inc5.desc':  'Детальна методичка з усіма матеріалами курсу для самостійного повторення.',
+    'inc6.title': 'Моделювання',
+    'inc6.desc':  'Навчайся створювати ідеальні ефекти для будь-якого типу очей.',
+    'inc7.title': 'Старт кар\'єри',
+    'inc7.desc':  'Соцмережі, пошук клієнтів, складання прайсу — все для свого бізнесу.',
+    'inc8.title': 'Підтримка',
+    'inc8.desc':  'Постійна підтримка після навчання — не залишишся з питаннями.',
+    // Teacher
+    'teacher.label':   'ПРО МАЙСТРА',
+    'teacher.tagline': 'Топ-майстер · 3 роки досвіду · Плзень, Чехія',
+    'teacher.bio':     'Я Дарина — майстер з нарощування вій і викладач. П\'ять років тому я переїхала до Чехії, починала на заводі. Все змінилося після першого курсу.<br><br>Сьогодні я навчаю дівчат з нуля і дивлюся, як у них з\'являється впевненість — не тільки у роботі, а і в собі. Саме тому я люблю живе навчання: ти бачиш кожен рух, задаєш питання в реальному часі і виходиш з результатом вже на першій практиці.',
+    'teacher.cta':     'Переглянути портфоліо →',
+    // Pricing
+    'price.label':   'ВАРТІСТЬ КУРСУ',
+    'price.heading': 'Від новачка до майстра.',
+    'plan.days': '4 ДНІ ІНТЕНСИВНОГО НАВЧАННЯ',
+    'plan.name': 'Повний курс',
+    'plan.note': 'Єдиноразова оплата · Плзень, Чехія',
+    'pf1':  '4 дні живого навчання',
+    'pf2':  'Теорія: будова ока, клей, матеріали, безпека',
+    'pf2b': 'Основи моделювання ресниць',
+    'pf3':  'Практика на 4 живих моделях',
+    'pf4':  'Всі техніки: класика, 2D-3D, Wet Effect',
+    'pf5':  'Всі ефекти: лисячий, лялечний, стрілка, мокрий',
+    'pf6':  'Офіційний сертифікат',
+    'pf7':  'Стартовий набір у подарунок',
+    'pf8':  'Детальна методичка',
+    'pf9':  'Допомога в старті кар\'єри (соцмережі, прайс)',
+    'pf10': 'Підтримка після навчання',
+    'plan.cta': 'Записатися на курс →',
+    // Student testimonials
+    'ctesti.label':   'ВІДГУКИ УЧЕНИЦЬ',
+    'ctesti.heading': 'Що кажуть ті, хто вже пройшов.',
+    'crev1.quote': '"Я взагалі не вірила, що зможу навчитися за 4 дні. На третій день вже робила клієнтку — і в мене все вийшло. Дарина — неймовірний педагог."',
+    'crev1.name':  'Катерина',
+    'crev1.city':  'Брно, Чехія',
+    'crev2.quote': '"Після курсу почала брати перших клієнтів вже через тиждень. Дарина допомагала ще місяць після навчання — відповідала на всі мої питання в чаті."',
+    'crev2.name':  'Аліна',
+    'crev2.city':  'Прага, Чехія',
+    'crev3.quote': '"Переїхала до Чехії рік тому і не знала чим зайнятися. Курс дав не тільки навичку — він дав мені впевненість і нову професію."',
+    'crev3.name':  'Оксана',
+    'crev3.city':  'Плзень, Чехія',
+    // FAQ
+    'faq.label':   'ПИТАННЯ ТА ВІДПОВІДІ',
+    'faq.heading': 'Часті питання.',
+    'faq1.q': 'Чи потрібен досвід, щоб записатися?',
+    'faq1.a': 'Ні. Курс розрахований на абсолютних новачків. Ти отримаєш всю теорію та практику з нуля.',
+    'faq2.q': 'Де проходить навчання?',
+    'faq2.a': 'Офлайн у Плзені, Чехія. Точна адреса надається після запису. Зручне сполучення з Прагою та Брном.',
+    'faq3.q': 'Чи це індивідуальне навчання?',
+    'faq3.a': 'Так. Курс проводиться індивідуально — один на один з Дариною. Весь час та увага повністю твої.',
+    'faq4.q': 'Які матеріали потрібно купувати?',
+    'faq4.a': 'Нічого. Усі матеріали (клей, пінцети, лайнери, ресниці) включені у вартість курсу.',
+    'faq5.q': 'Чи отримаю сертифікат?',
+    'faq5.a': 'Так. Після успішного завершення курсу ти отримаєш іменний сертифікат, який підтверджує твою кваліфікацію майстра з нарощування вій.',
+    'faq6.q': 'Пінцети, матеріали та інструменти — безкоштовно?',
+    'faq6.a': 'Так. Пінцети, клей, лайнери та ресниці — все входить у вартість курсу і залишається тобі після навчання. Одразу можеш починати приймати клієнток.',
+    // Final CTA
+    'fcta.label':   'ВЕРЕСЕНЬ 2026 · ПЛЗЕНЬ',
+    'fcta.heading': 'Твоє місце ще вільне.',
+    'fcta.sub':     'Натисни кнопку нижче — і ми напишемо тобі перше повідомлення.',
+    'fcta.cta':     'Записатися на курс →',
+    'fcta.note':    'Або напишіть напряму: @dory_lashes_plzen',
+  },
+
+  cs: {
+    'page.title':         'Dory Lashes — Darina, mistr prodlužování řas · Plzeň',
+    'course.page.title':  'Kurz prodlužování řas — Dory Lashes · Plzeň',
+    // Nav — index
+    'nav.portfolio':  'Portfolio',
+    'nav.prices':     'Ceník',
+    'nav.about':      'O mně',
+    'nav.course.cta': 'Kurz →',
+    // Nav — course
+    'nav.back': '← Zpět na portfolio',
+    'nav.book': 'Zapsat se →',
+    // Hero (index)
+    'hero.label':         'LASH ARTIST · PLZEŇ, ČESKÁ REPUBLIKA',
+    'hero.sub':           'Mistryně prodlužování řas · 3 roky zkušeností<br>Plzeň, Česká republika · @dory_lashes_plzen',
+    'hero.overlay.label': 'Mistrovství v detailech',
+    'hero.overlay.title': 'Pohled, který<br>mluví<br><em>sám.</em>',
+    // About
+    'about.label':   'O MNĚ',
+    'about.heading': 'Jsem Darina —<br>mistryně<br>prodlužování řas.',
+    'about.body':    'Je mi 22 let a v Česku žiji už pátý rok. Začínala jsem jako všichni — v továrně. Ale v jednu chvíli jsem pochopila, že tak žít nechci. Šla jsem na kurz prodlužování řas — a od té doby se můj život úplně změnil.<br><br>Dnes pracuji sama pro sebe, buduji si jméno a pomáhám dalším dívkám udělat totéž.',
+    'about.stat1':   'roky zkušeností',
+    'about.stat2':   'spokojených klientek',
+    'about.cta':     'Zobrazit práce →',
+    // Portfolio
+    'portfolio.label':   'PORTFOLIO',
+    'portfolio.heading': 'Práce.',
+    // Prices (index)
+    'prices.label':   'CENÍK SLUŽEB',
+    'prices.heading': 'Ceník.',
+    'prices.body':    'Prodlužování řas různými technikami a efekty.<br>Ceny jsou v korunách (CZK). Rezervace pouze přes Instagram.',
+    'prices.cta':     'Objednat se →',
+    // Testimonials (index)
+    'testi.label':   'RECENZE KLIENTEK',
+    'testi.heading': 'Co říkají klientky.',
+    'rev1.quote': '"Darina je čarodějka. Přicházím k ní už potřetí a pokaždé je výsledek lepší. Po proceduře se cítíte úplně jinak."',
+    'rev1.name':  'Marie',
+    'rev1.city':  'Plzeň, Česká republika',
+    'rev2.quote': '"Konečně jsem našla mistryni, které důvěřuji. Precizní práce, bez alergie, vydrží dlouho. Doporučuji všem svým kamarádkám."',
+    'rev2.name':  'Aňa',
+    'rev2.city':  'Praha, Česká republika',
+    'rev3.quote': '"Nemohla jsem uvěřit, jak přirozeně to vypadá. Všichni se ptali, jestli jsou to moje vlastní řasy. Darina svou práci ovládá dokonale."',
+    'rev3.name':  'Oxana',
+    'rev3.city':  'Brno, Česká republika',
+    // Course transition
+    'ct.label':   'OFFLINE KURZ',
+    'ct.heading': 'Chceš se naučit<br>prodlužování řas?',
+    'ct.sub':     'Pořádám offline kurz v Plzni. Individuální výuka, certifikát.',
+    'ct.cta':     'Zjistit více o kurzu →',
+    // Footer
+    'footer.ig':   'Instagram: @dory_lashes_plzen',
+    'footer.copy': '© 2026 Dory Lashes · Plzeň · IČO: 24864641',
+    // DM modal
+    'dm.heading': 'Napiš nám na Instagram',
+    'dm.sub':     'Zkopíruj zprávu a pošli nám ji do Direct — odpovíme co nejdříve.',
+    'dm.copy':    'Zkopírovat',
+    'dm.open':    'Otevřít Instagram →',
+
+    // ── Course page ───────────────────────────────────
+    'c.hero.label':   'OFFLINE KURZ · PLZEŇ, ČESKÁ REPUBLIKA',
+    'c.hero.heading': 'Od nuly k<br>sebejistému<br>mistrovi.',
+    'c.hero.sub':     'Výuka prodlužování řas od Dariny.<br>Individuální výuka · Certifikát · Podpora po kurzu.',
+    'c.hero.cta':     'Zapsat se na kurz →',
+    'c.hero.note':    'Příští termín — září 2026. Míst je omezené množství.',
+    // For whom
+    'fw.label':   'PRO KOHO JE KURZ',
+    'fw.heading': 'Tento kurz je pro tebe, pokud...',
+    'fw.badge1':  'Začátečníci',
+    'fw.badge2':  'Praktikující',
+    'fw.badge3':  'Nová kariéra',
+    'fw.badge4':  'Offline',
+    'fw.card1':   'Nikdy jsi se řasám nevěnovala a chceš začít od nuly',
+    'fw.card2':   'Již praktikuješ, ale máš pocit, že stagnuješ a chceš se rozvíjet',
+    'fw.card3':   'Hledáš novou profesi se stabilním příjmem',
+    'fw.card4':   'Je pro tebe důležité učit se od živé mistryně, ne jen sledovat videa',
+    // Program
+    'prog.label':   'PROGRAM KURZU',
+    'prog.heading': '4 dny — 4 kroky<br>k profesi.',
+    'd1.label': 'DEN 01', 'd1.title': 'Základy',
+    'd1.i1': 'Teorie: stavba oka, bezpečnost',
+    'd1.i2': 'Práce s lepidlem a materiály',
+    'd1.i3': 'Procvičení na manekýně',
+    'd1.i4': 'Základy modelování řas',
+    'd2.label': 'DEN 02', 'd2.title': 'Klasika',
+    'd2.i1': 'Technika klasického prodlužování (1D)',
+    'd2.i2': 'Praxe na modelkách',
+    'd2.i3': 'Postavení ruky, rychlost',
+    'd2.i4': 'Symetrie a opravy',
+    'd3.label': 'DEN 03', 'd3.title': 'Objemy',
+    'd3.i1': '2D, 3D objemy, Wet Effect',
+    'd3.i2': 'Tvorba svazečků',
+    'd3.i3': 'Efekty: lišičí, panenský, šipka, mokrý',
+    'd3.i4': 'Praxe na modelkách',
+    'd4.label': 'DEN 04', 'd4.title': 'Finále',
+    'd4.i1': 'Závěrečná praxe na modelkách',
+    'd4.i2': 'Procvičení všech technik',
+    'd4.i3': 'Zkouška a hodnocení práce',
+    'd4.i4': 'Start kariéry: sociální sítě, ceník',
+    // Included
+    'inc.label':   'CO JE ZAHRNUTO',
+    'inc.heading': 'Vše potřebné pro start kariéry.',
+    'inc1.title': 'Teorie + Praxe',
+    'inc1.desc':  'Stavba oka, práce s lepidlem a materiály, bezpečnost. Procvičení na manekýně + 4 živé modelky.',
+    'inc2.title': 'Všechny techniky',
+    'inc2.desc':  'Klasika (1D), 2D-3D, Wet Effect. Efekty: lišičí, panenský, šipka, mokrý pohled.',
+    'inc3.title': 'Certifikát',
+    'inc3.desc':  'Oficiální certifikát o absolvování kurzu prodlužování řas.',
+    'inc4.title': 'Startovní sada',
+    'inc4.desc':  'Profesionální sada pro práci jako dárek — začni vydělávat hned!',
+    'inc5.title': 'Studijní materiály',
+    'inc5.desc':  'Podrobné studijní materiály se vším z kurzu pro samostatné opakování.',
+    'inc6.title': 'Modelování',
+    'inc6.desc':  'Naučíš se vytvářet dokonalé efekty pro jakýkoli typ očí.',
+    'inc7.title': 'Start kariéry',
+    'inc7.desc':  'Sociální sítě, hledání klientek, sestavení ceníku — vše pro vlastní podnikání.',
+    'inc8.title': 'Podpora',
+    'inc8.desc':  'Průběžná podpora po studiu — s otázkami nezůstaneš sama.',
+    // Teacher
+    'teacher.label':   'O LEKTORCE',
+    'teacher.tagline': 'Top mistryně · 3 roky zkušeností · Plzeň, Česká republika',
+    'teacher.bio':     'Jsem Darina — mistryně prodlužování řas a lektorka. Před pěti lety jsem přijela do Česka a začínala jsem v továrně. Vše se změnilo po prvním kurzu.<br><br>Dnes učím dívky od nuly a vidím, jak v nich roste sebevědomí — nejen v práci, ale i v sobě. Proto miluji živou výuku: vidíš každý pohyb, ptáš se v reálném čase a odcházíš s výsledkem už při první praxi.',
+    'teacher.cta':     'Zobrazit portfolio →',
+    // Pricing
+    'price.label':   'CENA KURZU',
+    'price.heading': 'Od začátečníka k mistrovi.',
+    'plan.days': '4 DNY INTENZIVNÍ VÝUKY',
+    'plan.name': 'Kompletní kurz',
+    'plan.note': 'Jednorázová platba · Plzeň, Česká republika',
+    'pf1':  '4 dny živé výuky',
+    'pf2':  'Teorie: stavba oka, lepidlo, materiály, bezpečnost',
+    'pf2b': 'Základy modelování řas',
+    'pf3':  'Praxe na 4 živých modelkách',
+    'pf4':  'Všechny techniky: klasika, 2D-3D, Wet Effect',
+    'pf5':  'Všechny efekty: lišičí, panenský, šipka, mokrý',
+    'pf6':  'Oficiální certifikát',
+    'pf7':  'Startovní sada jako dárek',
+    'pf8':  'Podrobné studijní materiály',
+    'pf9':  'Pomoc se startem kariéry (soc. sítě, ceník)',
+    'pf10': 'Podpora po studiu',
+    'plan.cta': 'Zapsat se na kurz →',
+    // Student testimonials
+    'ctesti.label':   'RECENZE ABSOLVENTEK',
+    'ctesti.heading': 'Co říkají ty, které kurz absolvovaly.',
+    'crev1.quote': '"Vůbec jsem nevěřila, že se to naučím za 4 dny. Třetí den jsem už dělala klientku — a povedlo se mi to. Darina je neuvěřitelná pedagožka."',
+    'crev1.name':  'Kateřina',
+    'crev1.city':  'Brno, Česká republika',
+    'crev2.quote': '"Po kurzu jsem začala přijímat první klientky už za týden. Darina mi pomáhala ještě měsíc po skončení — odpovídala na všechny mé otázky."',
+    'crev2.name':  'Alina',
+    'crev2.city':  'Praha, Česká republika',
+    'crev3.quote': '"Před rokem jsem přijela do Česka a nevěděla, čím se zabývat. Kurz mi dal nejen dovednost — dal mi sebevědomí a novou profesi."',
+    'crev3.name':  'Oxana',
+    'crev3.city':  'Plzeň, Česká republika',
+    // FAQ
+    'faq.label':   'ČASTÉ OTÁZKY',
+    'faq.heading': 'Časté dotazy.',
+    'faq1.q': 'Je potřeba mít zkušenosti?',
+    'faq1.a': 'Ne. Kurz je určen pro absolutní začátečnice. Dostaneš veškerou teorii i praxi od nuly.',
+    'faq2.q': 'Kde výuka probíhá?',
+    'faq2.a': 'Osobně v Plzni, Česká republika. Přesná adresa bude sdělena po přihlášení. Snadné spojení z Prahy i Brna.',
+    'faq3.q': 'Je to individuální výuka?',
+    'faq3.a': 'Ano. Kurz probíhá individuálně — jen ty a Darina. Veškerý čas a pozornost jsou jen tvé.',
+    'faq4.q': 'Jaké materiály je potřeba koupit?',
+    'faq4.a': 'Žádné. Veškeré materiály (lepidlo, pinzety, linky, řasy) jsou zahrnuty v ceně kurzu.',
+    'faq5.q': 'Dostanu certifikát?',
+    'faq5.a': 'Ano. Po úspěšném absolvování kurzu dostaneš jmenovitý certifikát potvrzující tvou kvalifikaci mistryně prodlužování řas.',
+    'faq6.q': 'Pinzety, materiály a nástroje — zdarma?',
+    'faq6.a': 'Ano. Pinzety, lepidlo, linky a řasy — vše je zahrnuto v ceně kurzu a po skončení ti zůstane. Hned můžeš začít přijímat klientky.',
+    // Final CTA
+    'fcta.label':   'ZÁŘÍ 2026 · PLZEŇ',
+    'fcta.heading': 'Tvoje místo je stále volné.',
+    'fcta.sub':     'Stiskni tlačítko níže — a pošleme ti první zprávu.',
+    'fcta.cta':     'Zapsat se na kurz →',
+    'fcta.note':    'Nebo piš přímo: @dory_lashes_plzen',
+  }
+};
+
+// ── Engine ───────────────────────────────────────────
+const i18n = {
+  current: localStorage.getItem('doryLang') || 'uk',
+
+  init() {
+    this.apply();
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.lang === this.current);
+      btn.addEventListener('click', () => this.set(btn.dataset.lang));
+    });
+  },
+
+  set(code) {
+    this.current = code;
+    localStorage.setItem('doryLang', code);
+    this.apply();
+    document.querySelectorAll('.lang-btn').forEach(btn =>
+      btn.classList.toggle('active', btn.dataset.lang === code)
+    );
+  },
+
+  apply() {
+    const t = translations[this.current];
+    document.documentElement.lang = this.current;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const v = t[el.dataset.i18n];
+      if (v !== undefined) el.innerHTML = v;
+    });
+    const tk = document.body.dataset.titleKey;
+    if (tk && t[tk]) document.title = t[tk];
+  }
+};
+
+document.addEventListener('DOMContentLoaded', () => i18n.init());

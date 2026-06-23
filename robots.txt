@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /index_new.html
+Disallow: /scroll.html
+
+Sitemap: https://dorylashes.cz/sitemap.xml
