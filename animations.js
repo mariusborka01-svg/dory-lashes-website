@@ -31,9 +31,12 @@ if (document.querySelector('.about')) {
   gsap.from('.portfolio-item', { y: 60, opacity: 0, duration: 0.65, stagger: 0.07, ease, ...st('.portfolio-grid') });
 
   // Prices
-  gsap.from('.prices-visual', { ...fadeLeft, ...st('.prices', 'top 78%') });
-  gsap.from(['.prices .label', '.prices-heading', '.prices-body', '.prices .btn-gold'], {
+  gsap.from(['.prices .label', '.prices-info .gold-divider', '.prices-heading', '.prices-body', '.prices-cta'], {
     ...fadeUp, stagger: 0.1, ...st('.prices', 'top 78%')
+  });
+  gsap.from('.price-group', {
+    y: 24, opacity: 0, duration: 0.65, stagger: 0.12, ease,
+    ...st('.prices-table', 'top 85%')
   });
 
   // Testimonials

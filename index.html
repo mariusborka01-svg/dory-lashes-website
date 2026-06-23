@@ -343,43 +343,15 @@
       background: var(--darker-bg);
       padding: 100px 160px;
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1.45fr;
       gap: 80px;
-      align-items: center;
+      align-items: start;
     }
-    .prices-visual {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .prices-card-wrap {
-      position: relative;
-      width: 300px;
-    }
-    .prices-card-wrap::before {
-      content: '';
-      position: absolute;
-      top: -14px;
-      left: -14px;
-      width: 100%;
-      height: 100%;
-      border: 1px solid rgba(197,168,130,0.3);
-      border-radius: 14px;
-      pointer-events: none;
-      z-index: 0;
-    }
-    .prices-card-img {
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-      box-shadow: 0 32px 72px rgba(0,0,0,0.65), 0 0 0 1px rgba(255,255,255,0.04);
-      position: relative;
-      z-index: 1;
-    }
-    .prices-content {
+    .prices-info {
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      position: sticky;
+      top: 100px;
     }
     .prices-heading {
       font-family: 'Manrope', sans-serif;
@@ -390,10 +362,72 @@
       margin-bottom: 20px;
     }
     .prices-body {
-      font-size: 16px;
+      font-size: 15px;
       line-height: 1.8;
-      color: #9A9895;
+      color: #6B6360;
       margin-bottom: 40px;
+    }
+    .prices-cta { align-self: flex-start; }
+    .price-group {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 24px 0;
+    }
+    .price-cat {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      opacity: 0.75;
+      margin-bottom: 14px;
+    }
+    .price-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 9px 0;
+      gap: 16px;
+      border-bottom: 1px solid rgba(255,255,255,0.03);
+      transition: opacity 0.15s;
+    }
+    .price-row:hover { opacity: 0.78; }
+    .price-row:last-of-type { border-bottom: none; }
+    .price-row > span:first-child {
+      font-size: 14px;
+      color: rgba(255,255,255,0.62);
+      flex: 1;
+      min-width: 0;
+    }
+    .price-row > span:last-child {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--white);
+      white-space: nowrap;
+    }
+    .price-row > span:last-child::after {
+      content: ' CZK';
+      font-size: 10px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.25);
+      letter-spacing: 0.5px;
+      margin-left: 2px;
+    }
+    .price-row--addon > span:last-child { color: var(--gold); }
+    .price-row--discount > span:last-child { color: #6B6360; }
+    .prices-note {
+      font-size: 11px;
+      color: rgba(255,255,255,0.2);
+      margin-top: 6px;
+      font-style: italic;
+    }
+    .prices-currency {
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.04);
+      font-size: 11px;
+      color: rgba(255,255,255,0.16);
+      text-align: right;
+      letter-spacing: 0.3px;
     }
 
     /* Course Transition */
@@ -424,8 +458,8 @@
       .portfolio-grid { grid-auto-rows: 220px; }
       .testimonials { padding: 80px 40px; }
       .testimonials-grid { grid-template-columns: 1fr 1fr; }
-      .prices { padding: 80px 40px; gap: 60px; }
-      .prices-card-wrap { width: 260px; }
+      .prices { padding: 80px 40px; gap: 60px; grid-template-columns: 1fr; }
+      .prices-info { position: static; }
       .prices-heading { font-size: 48px; }
       .course-transition { padding: 80px 40px; }
     }
@@ -450,11 +484,11 @@
       .testimonials { padding: 60px 24px; }
       .testimonials-heading { font-size: 32px; }
       .testimonials-grid { grid-template-columns: 1fr; }
-      .prices { padding: 60px 24px; grid-template-columns: 1fr; }
-      .prices-visual { order: -1; }
-      .prices-card-wrap { width: 220px; }
-      .prices-heading { font-size: 40px; }
-      .prices-body { font-size: 15px; }
+      .prices { padding: 60px 24px; }
+      .prices-heading { font-size: 36px; }
+      .prices-body { font-size: 14px; }
+      .price-row > span:first-child { font-size: 13px; }
+      .price-row > span:last-child { font-size: 13px; }
       .course-transition { padding: 60px 24px; flex-direction: column; gap: 32px; }
       .ct-heading { font-size: 32px; }
       .ct-left { max-width: 100%; }
@@ -616,18 +650,52 @@
 
 <!-- ══ PRICES ════════════════════════════════════ -->
 <section class="prices" id="prices">
-  <div class="prices-visual">
-    <div class="prices-card-wrap">
-      <img class="prices-card-img" src="img/price-uk.png" alt="Прайс Dory Lashes" loading="lazy" data-lang-img="uk"/>
-      <img class="prices-card-img" src="img/price-cs.png" alt="Ceník Dory Lashes" loading="lazy" data-lang-img="cs" style="display:none"/>
-    </div>
-  </div>
-  <div class="prices-content">
+  <div class="prices-info">
     <span class="label" data-i18n="prices.label">ЦІНИ НА ПОСЛУГИ</span>
     <span class="gold-divider"></span>
     <h2 class="prices-heading" data-i18n="prices.heading">Прайс.</h2>
     <p class="prices-body" data-i18n="prices.body">Нарощування вій різних технік і ефектів.<br>Всі ціни в кронах (CZK). Запис тільки через Instagram.</p>
-    <a href="#" class="btn-gold" style="align-self:flex-start" data-dm data-i18n="prices.cta">Записатися →</a>
+    <a href="#" class="btn-gold prices-cta" data-dm data-i18n="prices.cta">Записатися →</a>
+  </div>
+
+  <div class="prices-table">
+    <div class="price-group">
+      <div class="price-cat" data-i18n="pcat.lashes">НАРОЩУВАННЯ ВІЙ</div>
+      <div class="price-row"><span data-i18n="ps.uholky">Уголки</span><span>900</span></div>
+      <div class="price-row"><span data-i18n="ps.klassika">Класика 1:1</span><span>1 000</span></div>
+      <div class="price-row"><span data-i18n="ps.1_5d">1,5Д</span><span>1 050</span></div>
+      <div class="price-row"><span data-i18n="ps.2d">2Д</span><span>1 100</span></div>
+      <div class="price-row"><span data-i18n="ps.3d">3Д</span><span>1 200</span></div>
+      <div class="price-row"><span data-i18n="ps.4d">4Д</span><span>1 300</span></div>
+      <div class="price-row"><span data-i18n="ps.5_6d">5Д–6Д</span><span>1 400</span></div>
+      <div class="price-row"><span data-i18n="ps.7_10d">7Д–10Д</span><span>1 500</span></div>
+      <div class="price-row"><span data-i18n="ps.wet">Мокрий ефект</span><span>1 100</span></div>
+      <div class="price-row"><span data-i18n="ps.wet_blend">Мокрий ефект з растушевкою</span><span>1 200</span></div>
+      <div class="price-row price-row--addon"><span data-i18n="ps.kim">Ефект KIM</span><span>+100</span></div>
+      <div class="price-row price-row--addon"><span data-i18n="ps.barbie">Ефект Barbie (пір'я)</span><span>+150</span></div>
+    </div>
+
+    <div class="price-group">
+      <div class="price-cat" data-i18n="pcat.removal">ЗНЯТТЯ</div>
+      <div class="price-row"><span data-i18n="ps.removal_other">Зняття вій чужого майстра</span><span>200</span></div>
+      <div class="price-row"><span data-i18n="ps.removal_noext">Зняття без подальшого нарощування</span><span>200</span></div>
+    </div>
+
+    <div class="price-group">
+      <div class="price-cat" data-i18n="pcat.correction">КОРЕКЦІЯ</div>
+      <div class="price-row price-row--discount"><span data-i18n="ps.corr2w">Корекція до 2 тижнів</span><span>−300</span></div>
+      <div class="price-row price-row--discount"><span data-i18n="ps.corr3w">Корекція до 3 тижнів</span><span>−200</span></div>
+      <p class="prices-note" data-i18n="prices.corr.note">* знижка від повної ціни</p>
+    </div>
+
+    <div class="price-group">
+      <div class="price-cat" data-i18n="pcat.brows">БРОВИ</div>
+      <div class="price-row"><span data-i18n="ps.brow_color">Фарбування + корекція брів</span><span>400</span></div>
+      <div class="price-row"><span data-i18n="ps.brow_depil">Депіляція 1 зони обличчя</span><span>100</span></div>
+      <div class="price-row"><span data-i18n="ps.brow_lami">Ламінування + корекція + фарбування</span><span>600</span></div>
+    </div>
+
+    <p class="prices-currency" data-i18n="prices.currency">Всі ціни вказані в чеських кронах (CZK)</p>
   </div>
 </section>
 
